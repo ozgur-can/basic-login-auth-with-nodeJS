@@ -1,0 +1,29 @@
+{
+  "name": "basic-login-auth-with-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --config bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zgrcnltnk/basic-login-auth-with-nodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zgrcnltnk/basic-login-auth-with-nodeJS/issues"
+  },
+  "homepage": "https://github.com/zgrcnltnk/basic-login-auth-with-nodeJS#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.9",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
+  }
+}
