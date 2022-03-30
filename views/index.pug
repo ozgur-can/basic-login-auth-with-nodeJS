@@ -2,12 +2,18 @@ extends layout
 
 block layout-content
   div.View
-    h1.Banner WHATABYTE
+    h1.Banner Login
     div.Message
       div.Title
-        h3 Making the Best
-        h1 Food For Devs
-      span.Details Access the WHATABYTE Team Portal
+        body
+          form(action='/add_movie' method='POST')
+            h3 Username
+            input(type='text' name='username') 
+            h3 Password
+            input(type='password' name='password')
+            br
+            br
+            input(type='submit' value='Submit')
     div.NavButtons
       a(href="/user")
-          div.NavButton Just dive in!
+        div.NavButton Just dive in!
