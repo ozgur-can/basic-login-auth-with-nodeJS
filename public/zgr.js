@@ -1,0 +1,3 @@
+function deneme() {
+    alert("zgr")
+}
