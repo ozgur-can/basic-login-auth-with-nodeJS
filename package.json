@@ -23,7 +23,10 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.9",
     "pug": "^3.0.2"
   }
 }
