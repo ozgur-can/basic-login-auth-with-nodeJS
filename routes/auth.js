@@ -8,18 +8,17 @@ router.post('/login', async(req, res) => {
         const token = await authenticateUser(req.body);
        
         if(token) {
-            // const date = new Date();
+            const date = new Date();
+            const minutes = 10;
+            date.setTime(date.getTime() + (minutes * 60 * 1000));
             res.cookie("jwt", token, {
-                // expires: date.setDate(date.getDate() + 1),
+                expires: date,
                 httpOnly: true
             });
 
-            console.log("cookie", req.cookies.jwt);
-
-            // res.render("profile", { username: req.body.username });
             res.redirect("/profile");
         } else {
-            res.render("error", { message: "login failed" });
+            res.redirect("/error");
         }
 
         debugger

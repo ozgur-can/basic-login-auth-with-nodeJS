@@ -18,12 +18,6 @@ app.use(authRouter);
 
 connectToDB();
 
-// app.post("/login", (req, res) => {
-//   const bodyExist = req.body;
- 
-//   // res.render("profile", { title: "Profile" });
-// });
-
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
 });

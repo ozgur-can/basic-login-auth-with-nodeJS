@@ -11,7 +11,6 @@ const authenticateUser = async({ username, password }) => {
   if (!user) return;
   if (user.password !== password) return;
 
-//   return jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: "1h" });
   return jwt.sign({ username }, jwtSecret, { expiresIn: "1h" });
 };
 
