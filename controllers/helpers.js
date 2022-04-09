@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const jwtSecret = "example";
 
-const authenticateUser = async({ username, password }) => {
+const isUserExist = async({ username, password }) => {
   if (username === "" || password === "") return;
 
   const user = await User.findOne({ username });
@@ -18,4 +18,4 @@ const verifyToken = (token) => {
   return jwt.verify(token, jwtSecret);
 };
 
-module.exports = { authenticateUser, verifyToken };
+module.exports = { authenticateUser: isUserExist, verifyToken };
