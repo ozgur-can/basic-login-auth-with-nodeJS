@@ -130,6 +130,15 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
+"archetype@0.13.x":
+  "integrity" "sha512-ts/rng/A4UQPw1ZuQWWZvR2T0q2S5+zQGBH0RPsSlmyIAsZuIGEm1rgRga2NJnHODBbW/jVWMZIWbtlEyrS7JQ=="
+  "resolved" "https://registry.npmjs.org/archetype/-/archetype-0.13.0.tgz"
+  "version" "0.13.0"
+  dependencies:
+    "lodash.clonedeep" "4.x"
+    "lodash.set" "4.x"
+    "mpath" "0.8.x"
+
 "array-flatten@1.1.1":
   "integrity" "sha1-ml9pkFGx5wczKPKgCJaLZOopVdI="
   "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
@@ -493,6 +502,14 @@
   "integrity" "sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg=="
   "resolved" "https://registry.npmjs.org/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz"
   "version" "1.6.0"
+
+"connect-mongodb-session@^3.1.1":
+  "integrity" "sha512-HBfQW7lRLb64DopgxL4Pv8/iay4HcS1WU7YJfi7B8UbBPZGzVEHx67mx8xP5c2rWUMCQ4Xi/u4GUSC7e90Hhtw=="
+  "resolved" "https://registry.npmjs.org/connect-mongodb-session/-/connect-mongodb-session-3.1.1.tgz"
+  "version" "3.1.1"
+  dependencies:
+    "archetype" "0.13.x"
+    "mongodb" "4.x"
 
 "connect@3.6.6":
   "integrity" "sha1-Ce/2xVr3I24TcTWnJXSFi2eG9SQ="
@@ -1350,6 +1367,11 @@
     "openurl" "1.1.1"
     "yargs" "17.1.1"
 
+"lodash.clonedeep@4.x":
+  "integrity" "sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8="
+  "resolved" "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  "version" "4.5.0"
+
 "lodash.includes@^4.3.0":
   "integrity" "sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8="
   "resolved" "https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz"
@@ -1389,6 +1411,11 @@
   "integrity" "sha1-DdOXEhPHxW34gJd9UEyI+0cal6w="
   "resolved" "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
   "version" "4.1.1"
+
+"lodash.set@4.x":
+  "integrity" "sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM="
+  "resolved" "https://registry.npmjs.org/lodash.set/-/lodash.set-4.3.2.tgz"
+  "version" "4.3.2"
 
 "lodash@^4.17.10":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
@@ -1504,7 +1531,7 @@
     "@types/whatwg-url" "^8.2.1"
     "whatwg-url" "^11.0.0"
 
-"mongodb@4.3.1":
+"mongodb@4.3.1", "mongodb@4.x":
   "integrity" "sha512-sNa8APSIk+r4x31ZwctKjuPSaeKuvUeNb/fu/3B6dRM02HpEgig7hTHM8A/PJQTlxuC/KFWlDlQjhsk/S43tBg=="
   "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.3.1.tgz"
   "version" "4.3.1"
@@ -1529,7 +1556,7 @@
     "ms" "2.1.3"
     "sift" "16.0.0"
 
-"mpath@0.8.4":
+"mpath@0.8.4", "mpath@0.8.x":
   "integrity" "sha512-DTxNZomBcTWlrMW76jy1wvV37X/cNNxPW1y2Jzd4DZkAaC5ZGsm8bfGfNOthcDuRJujXLqiuS6o3Tpy0JEoh7g=="
   "resolved" "https://registry.npmjs.org/mpath/-/mpath-0.8.4.tgz"
   "version" "0.8.4"

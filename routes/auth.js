@@ -2,19 +2,16 @@ const express = require('express');
 const { isUserExist } = require('../controllers/helpers');
 const router = express.Router();
 
-router.post('/login', async(req, res) => { 
+router.post('/login', async (req, res) => {
 
     try {
-        const userExist = await isUserExist(req.body);
-       
-        if(userExist) {
-            const date = new Date();
-            const minutes = 10;
-            date.setTime(date.getTime() + (minutes * 60 * 1000));
-            res.cookie("jwt", userExist, {
-                expires: date,
-                httpOnly: true
-            });
+        const user = await isUserExist(req.body);
+
+        if (user) {
+            const session = req.session;
+
+            session.user = { username: user.username, userId: user._id };
+            session.loggedIn = true;
 
             res.redirect("/profile");
         } else {
@@ -22,9 +19,23 @@ router.post('/login', async(req, res) => {
         }
 
     } catch (err) {
-        
+        console.log("login err");
     }
 
+});
+
+router.get("/logout", async (req, res) => {
+    try {
+    const session = req.session;
+        if (session) {
+            req.session.destroy();
+        }    
+
+        res.redirect("/");
+    } catch (err) {
+        res.redirect("/error");
+        console.log(err);
+    }
 });
 
 module.exports = router;

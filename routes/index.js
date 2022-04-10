@@ -1,28 +1,27 @@
 const express = require("express");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
 
-router.get("/", async(req, res) => {
-  const token = req.cookies.jwt;
+router.get("/", async (req, res) => {
   try {
-    if (!token)
+    const session = req.session;
+    if (!session || !session.user)
       return res.render("index", { title: "Home" });
-    else
+    else if(session.user)
       return res.redirect("/profile");
+    else throw new Error("no session exist 0")
   } catch (err) {
-    res.clearCookie("jwt");
     res.redirect("/");
   }
 });
 
 router.get("/profile", async (req, res) => {
-  const token = req.cookies.jwt;
   try {
-    const user = jwt.verify(token, "example");
-    req.user = user;
-    res.render("profile", { username: user.username });
+    const session = req.session;
+    if (session.user)
+      res.render("profile", { username: session.user.username });
+    else
+      throw new Error("no session exist 1");
   } catch (err) {
-    res.clearCookie("jwt");
     res.redirect("/");
   }
 });
